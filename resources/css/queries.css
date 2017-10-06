@@ -1,0 +1,251 @@
+
+
+@media only screen and (max-width: 1200px) {
+    .row {
+        padding: 0 2px;
+        width: 100%;
+    }
+    .mobile-nav-icon {
+        display: none;
+    }
+    nav {
+        margin-right: 20px;
+    }
+    section { 
+        padding: 50px 20px;
+    }
+    .about-me .row:last-of-type {
+        margin-bottom: 50px;
+    }
+    .view {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: 0;
+    }
+    .view .mask {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .col {
+        box-sizing: content-box;
+    }
+    .view img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .box {
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        font-size: 370%;
+    }
+    
+    .portfolio {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+
+     .mobile-nav-icon {
+        display: none;
+    }
+    .box {
+        font-size: 80%;
+    }
+    .btn {
+        font-size: 85%;
+    }
+    nav .row {
+        width: 100%;
+    }
+    
+    .hero-text {
+        top: 20%;
+    }
+    
+    .mask p {
+        font-size: 70%;
+    }
+    
+    .tools-row .col .view {
+        font-size: 90%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .col {
+        display: block;
+        width: 100%;
+        margin: 5px 2px;
+    }
+    
+    h1 {
+        font-size: 250%;
+        font-weight: 700;
+        top: 40%;
+    }
+    
+    .mobile-nav-icon {
+        display: block;
+    }
+
+    .box {
+        font-size: 100%;
+    }
+    
+    .view {
+        width: 100%;
+        height: 300px;
+    }
+    .portfolio-row .col,
+    .tools-row .col {
+        display: inline-block;
+        margin: 10px 5%;
+        width: 40%;
+    }
+    
+    .contact-form {
+        width: 100%;
+    }
+    
+    .contact-form .row .col {
+        width: 40%;
+        margin: 10px 5%;
+        display: inline-block;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    nav {
+        margin-right: 0;
+    }
+    nav .row {
+        margin: 0;
+     
+    }
+    
+    .sticky.row {
+        background-color: #fff;
+    }
+    .main-nav {
+        float: left;
+        margin-top: 35px;
+        margin-left: 25px;
+        z-index: 9999;
+    }
+    
+    
+    .main-nav li a:link,
+    .main-nav li a:visited {
+  
+        border: 0;
+        padding: 10px 0;
+        font-size: 100%;
+        z-index: 999
+    }
+    
+    .main-nav li a:hover,
+    .main-nav li a:active {
+        border-bottom: 1px solid #c0392b;
+    }
+    .sticky .main-nav {
+        margin-top: 10px;
+    }
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited {
+        word-spacing: 3px;
+        padding: 10px 0;
+    }
+    
+    .info-row {
+        height: auto;
+    }
+    
+    .info-row .col {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    h1 {
+        font-size: 170%;
+        line-height: 145%;
+        font-weight: 700;
+       
+    }
+    
+    nav .row ul li {
+        display: inline-block;
+        margin-right: 5px;
+        margin-left: 2px;
+        font-size: 60%;
+    }
+    
+    .hero-text {
+        top: 40%;
+    }
+    .mobile-nav-icon {
+        display: block;
+    }
+    .col {
+        margin: 5px 5px;
+    }
+    
+    .portfolio-row .col,
+    .tools-row .col {
+        display: block;
+        margin: 10px 5%;
+        width: 90%;
+    }
+    
+    .view {
+        width: 300px;
+        height: 300px;
+        margin: 5px auto;
+    }
+    
+    .view img {
+        max-height: 350px;
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        
+    }
+    .contact-form .row .col {
+        width: 90%;
+        margin: 10px 5%;
+        display: block;
+    }
+    
+    .contact-form .row .col:first-of-type {
+        display: none;
+    }
+    
+    .work-details {
+        font-size: 80%;
+    }
+    
+    .work-details .row p {
+        width: 80%;
+        margin: 10px 10%;
+    }
+    
+    .banner {
+        height: 40vh;
+    }
+    .banner .row p {
+        font-size: 100%;
+    }
+    
+    .banner .row a {
+        margin-top: 40px;
+    }
+}
