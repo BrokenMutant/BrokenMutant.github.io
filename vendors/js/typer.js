@@ -1,13 +1,13 @@
 var Typer = function(element) {
-  console.log("constructor called");
   this.element = element;
   var delim = element.dataset.delim || ","; // default to comma
   var words = element.dataset.words || "override these,sample typing";
   this.words = words.split(delim).filter(function(v){return v;}); // non empty words
   this.delay = element.dataset.delay || 200;
-  this.deleteDelay = element.dataset.deleteDelay || 800;
+  this.loop = element.dataset.loop || "true";
+  this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
 
-  this.progress = { word:0, char:0, building:true, atWordEnd:false };
+  this.progress = { word:0, char:0, building:true, atWordEnd:false, looped: 0 };
   this.typing = true;
 
   var colors = element.dataset.colors || "black";
@@ -32,7 +32,7 @@ Typer.prototype.doTyping = function() {
   var p = this.progress;
   var w = p.word;
   var c = p.char;
-  var currentChar = this.words[w][c];
+  var currentDisplay = [...this.words[w]].slice(0, c).join("");
   p.atWordEnd = false;
   if (this.cursor) {
     this.cursor.element.style.opacity = "1";
@@ -41,23 +41,33 @@ Typer.prototype.doTyping = function() {
     var itself = this.cursor;
     this.cursor.interval = setInterval(function() {itself.updateBlinkState();}, 400);
   }
+
+  e.innerHTML = currentDisplay;
+
   if (p.building) {
-    e.innerHTML += currentChar;
-    p.char += 1;
-    if (p.char == this.words[w].length) {
+    if (p.char == [...this.words[w]].length) {
       p.building = false;
       p.atWordEnd = true;
+    } else {
+      p.char += 1;
     }
   } else {
-    e.innerHTML = e.innerHTML.slice(0, -1);
-    if (!this.element.innerHTML) {
+    if (p.char == 0) {
       p.building = true;
       p.word = (p.word + 1) % this.words.length;
-      p.char = 0;
       this.colorIndex = (this.colorIndex + 1) % this.colors.length;
       this.element.style.color = this.colors[this.colorIndex];
+    } else {
+      p.char -= 1;
     }
   }
+
+  if(p.atWordEnd) p.looped += 1;
+
+  if(!p.building && (this.loop == "false" || this.loop <= p.looped) ){
+    this.typing = false;
+  }
+
   var myself = this;
   setTimeout(function() {
     if (myself.typing) { myself.doTyping(); };
@@ -67,7 +77,6 @@ Typer.prototype.doTyping = function() {
 var Cursor = function(element) {
   this.element = element;
   this.cursorDisplay = element.dataset.cursordisplay || "_";
-  this.owner = typers[element.dataset.owner] || "";
   element.innerHTML = this.cursorDisplay;
   this.on = true;
   element.style.transition = "all 0.1s";
@@ -87,27 +96,27 @@ Cursor.prototype.updateBlinkState = function() {
 }
 
 function TyperSetup() {
-  typers = {};
-  elements = document.getElementsByClassName("typer");
+  var typers = {};
+  var elements = document.getElementsByClassName("typer");
   for (var i = 0, e; e = elements[i++];) {
     typers[e.id] = new Typer(e);
   }
-  elements = document.getElementsByClassName("typer-stop");
+  var elements = document.getElementsByClassName("typer-stop");
   for (var i = 0, e; e = elements[i++];) {
-    var owner = typers[e.dataset.owner];
+    let owner = typers[e.dataset.owner];
     e.onclick = function(){owner.stop();};
   }
-  elements = document.getElementsByClassName("typer-start");
+  var elements = document.getElementsByClassName("typer-start");
   for (var i = 0, e; e = elements[i++];) {
-    var owner = typers[e.dataset.owner];
+    let owner = typers[e.dataset.owner];
     e.onclick = function(){owner.start();};
   }
 
-  elements2 = document.getElementsByClassName("cursor");
+  var elements2 = document.getElementsByClassName("cursor");
   for (var i = 0, e; e = elements2[i++];) {
-    var t = new Cursor(e);
+    let t = new Cursor(e);
+    t.owner = typers[e.dataset.owner];
     t.owner.cursor = t;
-    console.log(t.owner.cursor);
   }
 }
 

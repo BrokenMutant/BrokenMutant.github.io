@@ -1,0 +1,94 @@
+@import 'base-variables';
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html, body {
+    font-family: $body-font;
+    font-size: 22px;
+}
+
+#hero-name {
+    float: right;
+    position: absolute;
+    z-index: 800;
+    background-color: #fff;
+     top: 20%;
+    left: 50%;
+     text-align: center;
+    transform: translateX(-50%);
+        padding: 2%;
+      border-style: groove;
+    border-color: $main-color-dark;
+    border-width: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 45px #555;
+}
+
+
+#hero-about {
+     bottom: 10%;
+    right: 3%;
+        padding: 2%;
+    
+}
+
+h1 {
+    font-size: 400%;
+    font-weight: 200;
+    color: $main-color;
+    font-family: $heading-font;
+}
+
+h3 {
+    font-size: 200%;
+    font-family: $heading-font;
+    font-family: 'Poiret One';
+}
+
+section {
+    padding: 80px;
+    background-color: rgba(72, 72, 72, 0.17);
+}
+
+.container {
+    text-align: left;
+}
+
+h2 {
+    color: $main-color;
+    font-family: $heading-font;
+   
+}
+
+
+.feature {
+    font-family: $heading-font2;
+    display: block;
+     &:after {
+        content: '';
+         display: block;
+          margin: 1% auto;
+        border-bottom: 2px solid $main-color-dark;
+    }
+}
+
+.section {
+	
+    vertical-align: top;
+}
+
+#maths {
+    //background-image: linear-gradient(rgba(0, 0, 0, 0.28),rgba(0, 0, 0, 0.29)), url("../images/maths.jpg");
+    background-size: cover;
+}
+
+.feature-box {
+	background-color: #fff;
+    box-shadow: 5px 5px 45px #555;
+    width: 30%;
+    padding: 5%;
+    border-radius: 20px;
+}
