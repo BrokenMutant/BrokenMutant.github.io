@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="vendors/css/fullpage.css">
     <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="vendors/css/ionicons.min.css">
 </head>
 
 <body>
- <div id="fullpage">
+    <div id="fullpage">
         <header id="particles" class="section">
             <div id="hero-name" class="container">
                 <h1> Aniket Bhattacharyea</h1>
@@ -22,30 +23,110 @@
             </div>
 
         </header>
-   
+
         <div class="section" id="maths">
+            <div class="container">
+                <h2>About me</h2>
+                <div class="container text-center">
+                    <img src="resources/images/me.png" id="me">
+                </div>
+                <p>
+                    <span class="feature">Mathematician</span> I'm a mathematics student, currently persuing B.Sc. Honours from St. Xaviers College, Kolkata.
+                    <span class="feature">Coder</span> I like to code in my free time. My specialities are C, C++, Python, Bash and Android programming with Java and Kotlin. I also provide support with MySQL and PHP required for web hosting.
+            
+                    <span class="feature">Tech enthusiast</span> Last but not the least, I'm an avid follower of all things tech. I like Free and Open source softwares
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="projects">
            <div class="container">
-              <h2>About me</h2>
-               <p>
-                  <span class="feature">Mathematician</span>
-                   I'm a mathematics student, currently persuing B.Sc. Honours from St. Xaviers College, Kolkata.
-                   <span class="feature">Coder</span>
-                   I like to code in my free time. My specialities are C, C++, Python, Bash and Android programming with Java and Kotlin. I also provide support with MySQL and PHP required for web hosting.
-                   <span class="feature">Designer</span>
-                   I'm a part time web designer with a knowledge of HTML and CSS, as well as Javascript and JQuery. I can make responsive websites with subtle animations and beautiful design. Also, I design icons and/or UI for Android apps.
-                   <span class="feature">Tech enthusiast</span>
-                   Last but not the least, I'm an avid follower of all things tech. I like Free and Open source softwares 
-               </p>
+               <h2>My Github projects</h2>
+           </div>
+            <div id="projects-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+
+                </ol>
+                <div class="carousel-inner">
+
+                </div>
+                <a class="carousel-control-prev" href="#projects-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                <a class="carousel-control-next" href="#projects-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+            </div>
+        </div>
+        <div class="section" id="contact">
+           <div class="container">
+                <h2> Get in touch</h2>
+                <p>If you want to get in touch with me, you can find me in these social media websites</p>
+           </div>
+           <div class="container">
+              <div class="row">
+                  <div class="col-sm">
+                   <div class="container  social-cont">
+                       <h3><a href="https://plus.google.com/u/0/+AniketBhattacharyea669">Google+</a></h3>
+                 
+                       <i class="social display-2 ion-social-googleplus-outline"></i>
+                   </div>
+                   </div>
+                   
+                   <div class="col-sm">
+                   <div class="container  social-cont">
+                       <h3><a href="https://github.com/BrokenMutant">Github</a></h3>
+                   
+                       <i class="social display-2 ion-social-github-outline"></i>
+                   </div>
+                   </div>
+                   
+                
+                
+                  
+              </div>
+               
+           </div>
+           <div class="container">
+               <p>Or, find me on <a href="https://www.quora.com/profile/Aniket-Bhattacharyea">Quora</a>, or <a href="mailto:aniketmail669@gmail.com">mail me</a></p>
+               <p>Find me on <a href="https://medium.com/@brokenmutant">Medium</a>, and subscribe to <a href="https://onepostmore.000webhostapp.com/">my blog</a></p>
            </div>
         </div>
     </div>
+    <template id="project-card">
+       <div class="carousel-item">
+       <div class="project-card">
+           <div class="project-head container">
+            <h3 class="project-name"></h3>
+            <div class="project-desc">
+                
+            </div>    
+        </div>
+        <div class="projects-info container">
+           <ul class="project-info-list">
+               
+            <li data-toggle="tooltip" title="Forks"><i class="fork ion-network"></i> <span class="fork-count"></span></li>
+            <li data-toggle="tooltip" title="Stars"><i class="star ion-star"></i> <span class="star-count"></span></li>
+            <li data-toggle="tooltip" title="Watchers"><i class="watch ion-eye"></i> <span class="watch-count"></span></li>
+            <li data-toggle="tooltip" title="Open issues"><i class="open-issues ion-sad"></i> <span class="open-issues-count"></span></li>
+            <li data-toggle="tooltip" title="Language"><i class="language ion-chatbox-working"></i> <span class="language-name"></span></li>
+            <li data-toggle="tooltip" title="License"><i class="license ion-university"></i> <span class="license-name"></span></li>
+           </ul>
+         
+        </div>
+       </div>
+        
+       </div>
+  
+    </template>
 
 
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -59,6 +140,36 @@
             $('#fullpage').fullpage();
         });
 
+        $.get('https://api.github.com/users/BrokenMutant/repos', function(data) {
+            console.log(data);
+            var temp = $('#project-card').html();
+            for (var proj in data) {
+                var p = $(temp);
+                var project = data[proj];
+                var forked = (project.fork)?' (forked)':'';
+                p.find('.project-name').append('<a href="' + project.url + '">' + project.name + forked +'</a>');
+                p.find('.project-desc').append(project.description||"No description available");
+                p.find('.fork-count').text(project.forks_count);
+                p.find('.watch-count').text(project.watchers_count);
+                p.find('.star-count').text(project.stargazers_count);
+                p.find('.open-issues-count').text(project.open_issues_count);
+                p.find('.language-name').text(project.language || "No language specified");
+                var license_text = project.license?license_text = '<a href="'+project.license.url+'">'+project.license.name+'</a>' : "No license specified";
+                
+                p.find('.license-name').html(license_text);
+                
+              
+                $('.carousel-inner').append(p);
+                $('.carousel-indicators').append('<li data-target="#projects-carousel" data-slide-to="' + proj + '"></li>');
+            }
+            $('.carousel-item:first').addClass('active');
+            $('.carousel-indicators li:first').addClass('active');
+        });
+
+
+
+        $('.carousel').carousel();
+        $('[data-toggle="tooltip"]').tooltip();
     </script>
 </body>
 
